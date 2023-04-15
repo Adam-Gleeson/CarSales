@@ -14,6 +14,7 @@ export class CarlistComponent {
   carsData: ICar[] = [];
   show: boolean = false;
   private _carAPIService!: CarApiService;
+  private cars: NewCar[] = [];
 
 
   constructor(private http: HttpClient, carAPIService: CarApiService) {
@@ -21,6 +22,25 @@ export class CarlistComponent {
       this.carsData = data;
       this._carAPIService = carAPIService;
     });
+  }
+
+/*
+  //custom work
+  create(car: NewCar): void {
+    this.cars.push(car);
+  }
+
+  addCar(car: NewCar): boolean {
+    const existingCar = this.getCars().find(c => c.id === car.id);
+    if (existingCar) {
+      return false; // car already exists, addition unsuccessful
+    }
+    this.create(car);
+    return true; // car added successfully
+  }
+
+  getCars(): NewCar[] {
+    return this.cars;
   }
 
   //car list componenet.ts.txt Code

@@ -1,4 +1,5 @@
 export interface ICar {
+    id: any;
     _id:string;
     make:string;
     model:string;
@@ -7,6 +8,7 @@ export interface ICar {
 }
 
 export class NewCar implements ICar {
+    id: any;
     _id!:string;
     make!:string;
     model!:string;
